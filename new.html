@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Resource Optimization - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h2>⚡ Smart Resource Optimization</h2>
+    <nav>
+      <a href="#usage">Usage</a>
+      <a href="#weather">Weather</a>
+      <a href="#predictions">Predictions</a>
+    </nav>
+  </header>
+
+  <!-- Main container -->
+  <div class="container">
+    <h1>Dashboard</h1>
+    <p class="intro-text">Track energy consumption, weather conditions, and predicted usage to optimize your resources effectively.</p>
+
+    <!-- Input Section -->
+    <section class="input-section">
+      <label for="userId">Smart meter ID:</label>
+      <input type="number" id="userId" value="1" min="1" />
+      <label for="location">Location:</label>
+      <input type="text" id="location" value="Banglore" />
+      <button onclick="loadData()">Load Data</button>
+    </section>
+
+    <!-- Alerts & Recommendations -->
+    <div id="alerts" class="message-box"></div>
+    <div id="recommendations" class="message-box"></div>
+
+    <!-- Usage Data -->
+    <section id="usage">
+      <h2>📊 Usage Data</h2>
+      <canvas id="usageChart"></canvas>
+    </section>
+
+    <!-- Weather Data -->
+    <section id="weather">
+      <h2>🌦 Weather Data</h2>
+      <table id="weatherTable">
+        <tr><th>Date</th><th>Temperature (°C)</th><th>Rainfall (mm)</th></tr>
+      </table>
+    </section>
+
+    <!-- Predicted Usage -->
+    <section id="predictions">
+      <h2>🔮 Predicted Usage</h2>
+      <table id="predTable">
+        <tr><th>Date</th><th>Predicted Usage</th></tr>
+      </table>
+    </section>
+
+    <!-- Extra Info -->
+    <section class="extra-info">
+      <h2>💡 Optimization Tips</h2>
+      <ul>
+        <li>Use smart appliances during off-peak hours to save costs.</li>
+        <li>Regularly monitor weather patterns for efficient usage.</li>
+        <li>Leverage predictive analytics to prevent resource wastage.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Floating Chatbot Tag -->
+  <div id="chatbotTag" onclick="toggleChat()">💬 Help</div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbotWindow">
+    <div class="chat-header">
+      💬 Smart Assistant
+      <span onclick="toggleChat()" class="close-btn">×</span>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <p class="bot">Hello 👋 I’m your Smart Resource Assistant. Let's get started!</p>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="chatInput" placeholder="Type your answer..." />
+      <button onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Smart Resource Optimization | Designed by Aadarsh Kumar</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
